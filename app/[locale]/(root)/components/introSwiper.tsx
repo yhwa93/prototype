@@ -1,7 +1,7 @@
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Thumbs, FreeMode, Navigation, Controller, Parallax, EffectFade } from 'swiper/modules'
+import { Autoplay, Thumbs, FreeMode, Navigation, Controller, Parallax, EffectFade, Pagination, Scrollbar } from 'swiper/modules'
 import { type Swiper as SwiperTypes } from 'swiper'
 
 import { useState } from 'react'
@@ -10,6 +10,8 @@ import 'swiper/css/thumbs'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 import * as S from '@/app/[locale]/(root)/styles/mainpage'
 import Image from 'next/image'
 
@@ -78,11 +80,11 @@ export default function IntroSwiper() {
           loop={true}
           // autoHeight={true}
           // autoplay={true}
+          scrollbar={true}
           spaceBetween={10}
           slidesPerView={2}
-          freeMode={false}
           watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs, Autoplay]}
+          modules={[Scrollbar, Thumbs, Autoplay]}
         >
           <SwiperSlide>
             <div className="image_wrapper">

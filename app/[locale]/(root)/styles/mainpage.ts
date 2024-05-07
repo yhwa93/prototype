@@ -194,6 +194,7 @@ export const IntroSwiperWrapper = styled.div`
   /* 썸네일 */
   .intro_thumb_swiper {
     width: 100%;
+    padding-bottom: 30px;
 
     .swiper-slide {
       height: 100%;
