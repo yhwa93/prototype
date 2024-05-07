@@ -18,7 +18,8 @@ const windowSizesObj: Record<WindowsType, number> = {
   xl: 1280,
 }
 
-//해상도별 미디어쿼리 모듈화
+/* MediaQueries Module
+ * - 해상도별 미디어쿼리 모듈 */
 const MediaQueries: Record<WindowsType, MediaQueryType> = Object.keys(windowSizesObj).reduce(
   (acc, label) => {
     switch (label) {
