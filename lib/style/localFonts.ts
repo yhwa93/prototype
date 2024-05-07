@@ -1,4 +1,11 @@
 import localFont from 'next/font/local'
+import { Noto_Sans_JP } from 'next/font/google'
+
+const NotoSansJP = Noto_Sans_JP({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: [],
+  style: 'normal',
+})
 
 const SUITv1 = localFont({
   src: [
@@ -32,4 +39,5 @@ const SUITv1 = localFont({
 
 export const LocalFonts = {
   SUITv1,
+  NotoSansJP,
 }

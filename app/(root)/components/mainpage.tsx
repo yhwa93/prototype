@@ -25,7 +25,7 @@ export default function MainPage({ data }: { data: IDummyData[] }) {
   return (
     <S.MainPageWrapper>
       <S.Container>
-        <h1>test!!</h1>
+        <h1>test</h1>
         {/*<S.IntroSection>*/}
         {/*  <S.DescriptionGroup>*/}
         {/*    <S.TitleAreaList>*/}
