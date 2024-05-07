@@ -14,10 +14,25 @@ const HeaderWrapper = styled.header`
 const Container = styled.div`
   margin: 0 auto;
   height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  ${(props) => props.theme.MediaQueries.sm`
+    width: ${props.theme.Containers.sm}px;
+  `}
+
+  ${(props) => props.theme.MediaQueries.md`
+    width: ${props.theme.Containers.md}px;
+  `}
+
+  ${(props) => props.theme.MediaQueries.lg`
+    width: ${props.theme.Containers.lg}px;
+  `}
 
   ${(props) => props.theme.MediaQueries.xl`
     width: ${props.theme.Containers.xl}px;
-    background: rgba(0,0,0,0.5);
   `}
 `
 

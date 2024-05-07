@@ -197,7 +197,7 @@ export const IntroSwiperWrapper = styled.div`
 
     .swiper-slide {
       height: 100%;
-      opacity: 0.4;
+      opacity: 0.3;
 
       &.swiper-slide-thumb-active {
         opacity: 1;
@@ -218,6 +218,21 @@ export const LeftGroup = styled.div`
   justify-content: space-between;
   border-radius: 10%;
 
+  .intro_title_swiper {
+    width: 100%;
+
+    h2 {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
   ${(props) => props.theme.MediaQueries.sm`
       width: calc(36.72% - 5px);
   `}
@@ -228,7 +243,6 @@ export const RightGroup = styled.div`
   overflow: hidden;
 
   ${(props) => props.theme.MediaQueries.sm`
-     
       width: calc(63.28% - 5px);
   `}
 `

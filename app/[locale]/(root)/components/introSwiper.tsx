@@ -1,7 +1,7 @@
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Thumbs, FreeMode, Navigation } from 'swiper/modules'
+import { Autoplay, Thumbs, FreeMode, Navigation, Controller, Parallax, EffectFade } from 'swiper/modules'
 import { type Swiper as SwiperTypes } from 'swiper'
 
 import { useState } from 'react'
@@ -9,23 +9,66 @@ import 'swiper/css'
 import 'swiper/css/thumbs'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
 import * as S from '@/app/[locale]/(root)/styles/mainpage'
 import Image from 'next/image'
 
 export default function IntroSwiper() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperTypes | null>(null)
+  const [controlledSwiper, setControlledSwiper] = useState<SwiperTypes | null>(null)
 
   return (
     <S.IntroSwiperWrapper>
       <S.LeftGroup>
-        <div>
-          <h2>
-            What is <br /> Your Gift?
-          </h2>
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of
-          </p>
-        </div>
+        <Swiper
+          onSwiper={setControlledSwiper}
+          className="intro_title_swiper"
+          initialSlide={0}
+          loop={true}
+          spaceBetween={0}
+          slidesPerView={1}
+          grabCursor={false}
+          enabled={false}
+          modules={[Navigation, Autoplay, Controller]}
+        >
+          <SwiperSlide>
+            <h2>
+              What is <br /> Your Gift? 11
+            </h2>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
+              of
+            </p>
+          </SwiperSlide>
+          <SwiperSlide>
+            <h2>
+              What is <br /> Your Gift? 22
+            </h2>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
+              of
+            </p>
+          </SwiperSlide>
+          <SwiperSlide>
+            <h2>
+              What is <br /> Your Gift? 33
+            </h2>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
+              of
+            </p>
+          </SwiperSlide>
+          <SwiperSlide>
+            <h2>
+              What is <br /> Your Gift? 44
+            </h2>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
+              of
+            </p>
+          </SwiperSlide>
+        </Swiper>
+
         {/* Thumbs Swiper -> store swiper instance */}
         {/* It is also required to set watchSlidesProgress prop */}
         <Swiper
@@ -69,13 +112,15 @@ export default function IntroSwiper() {
           className="intro_main_swiper"
           initialSlide={0}
           loop={true}
+          effect={'fade'}
           // autoHeight={true}
           // autoplay={true}
           spaceBetween={20}
           slidesPerView={1}
-          navigation={true}
+          navigation={false}
+          controller={{ control: controlledSwiper }}
           thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs, Autoplay]}
+          modules={[EffectFade, Navigation, Thumbs, Autoplay, Controller]}
         >
           <SwiperSlide>
             <div className="image_wrapper">
