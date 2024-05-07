@@ -1,7 +1,7 @@
 //styled.d.ts
 import 'styled-components'
 import { CSSProp } from 'styled-components'
-import { WINDOW_SIZES } from '@/lib/style/styleEnums'
+import { WINDOW_SIZES } from '@/lib/types/styleEnums'
 
 /* MediaQueries Type
  * - 해상도 사이즈별 네이밍 타입 */

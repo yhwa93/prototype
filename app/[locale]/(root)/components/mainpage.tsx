@@ -14,6 +14,7 @@ import { dummyListState } from '@/lib/recoil/atoms'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { IDummyData } from '@/app/[locale]/(root)/page'
 import { useTranslations } from 'next-intl'
+import IntroSwiper from '@/app/[locale]/(root)/components/introSwiper'
 
 export default function MainPage({ data }: { data: IDummyData[] }) {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -29,6 +30,8 @@ export default function MainPage({ data }: { data: IDummyData[] }) {
     <S.MainPageWrapper>
       <S.Container>
         <h1>{t('title')}</h1>
+
+        <IntroSwiper />
         {/*<S.IntroSection>*/}
         {/*  <S.DescriptionGroup>*/}
         {/*    <S.TitleAreaList>*/}

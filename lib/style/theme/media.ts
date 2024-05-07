@@ -1,7 +1,7 @@
 //미디어 쿼리 모듈화 theme export
 import { css } from 'styled-components'
 import { MediaQueryType, WindowsType } from '@/lib/style/styled'
-import { WINDOW_SIZES } from '@/lib/style/styleEnums'
+import { WINDOW_SIZES } from '@/lib/types/styleEnums'
 
 /* 해상도별 사이즈 object
  * - xxxs, xxs, xs, sm : 모바일/모바일 가로 (280,375,460)

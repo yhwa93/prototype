@@ -157,3 +157,43 @@ export const SwiperPagination = styled.div`
     aspect-ratio: 1/1;
   }
 `
+
+export const IntroSwiperWrapper = styled.div`
+  /* swiper image */
+  .image_wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 367/276;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .intro_main_swiper {
+    height: 80%;
+    width: 100%;
+  }
+
+  .intro_thumb_swiper {
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .intro_thumb_swiper .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+    aspect-ratio: 1/1;
+  }
+
+  .intro_thumb_swiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+`
