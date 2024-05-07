@@ -159,41 +159,76 @@ export const SwiperPagination = styled.div`
 `
 
 export const IntroSwiperWrapper = styled.div`
-  /* swiper image */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+  padding: 60px 20px;
+
+  ${(props) => props.theme.MediaQueries.sm`
+      flex-direction: row;
+      padding: 60px 0;
+  `}
+
+  /* 공통: swiper image */
   .image_wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 367/276;
+    overflow: hidden;
 
     img {
       object-fit: cover;
     }
   }
 
-  .swiper-slide {
-    background-size: cover;
-    background-position: center;
-  }
-
+  /* 메인 */
   .intro_main_swiper {
-    height: 80%;
     width: 100%;
+
+    .image_wrapper {
+      aspect-ratio: 367/276;
+      border-radius: 5%;
+    }
   }
 
+  /* 썸네일 */
   .intro_thumb_swiper {
     width: 100%;
-    height: 20%;
-    box-sizing: border-box;
-    padding: 10px 0;
-  }
 
-  .intro_thumb_swiper .swiper-slide {
-    height: 100%;
-    opacity: 0.4;
-    aspect-ratio: 1/1;
-  }
+    .swiper-slide {
+      height: 100%;
+      opacity: 0.4;
 
-  .intro_thumb_swiper .swiper-slide-thumb-active {
-    opacity: 1;
+      &.swiper-slide-thumb-active {
+        opacity: 1;
+      }
+    }
+
+    .image_wrapper {
+      aspect-ratio: 1/1;
+      border-radius: 10%;
+    }
   }
+`
+
+export const LeftGroup = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10%;
+
+  ${(props) => props.theme.MediaQueries.sm`
+      width: calc(36.72% - 5px);
+  `}
+`
+export const RightGroup = styled.div`
+  width: 100%;
+  border-radius: 5%;
+  overflow: hidden;
+
+  ${(props) => props.theme.MediaQueries.sm`
+     
+      width: calc(63.28% - 5px);
+  `}
 `

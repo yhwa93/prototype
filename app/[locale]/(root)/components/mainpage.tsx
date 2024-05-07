@@ -29,8 +29,6 @@ export default function MainPage({ data }: { data: IDummyData[] }) {
   return (
     <S.MainPageWrapper>
       <S.Container>
-        <h1>{t('title')}</h1>
-
         <IntroSwiper />
         {/*<S.IntroSection>*/}
         {/*  <S.DescriptionGroup>*/}
@@ -92,6 +90,7 @@ export default function MainPage({ data }: { data: IDummyData[] }) {
         {/*    </Swiper>*/}
         {/*  </S.ImageGroup>*/}
         {/*</S.IntroSection>*/}
+        <h1>{t('title')}</h1>
       </S.Container>
     </S.MainPageWrapper>
   )

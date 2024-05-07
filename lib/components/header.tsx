@@ -8,6 +8,7 @@ const HeaderWrapper = styled.header`
   background-color: deepskyblue;
   position: sticky;
   top: 0;
+  z-index: 1000;
 `
 
 const Container = styled.div`
