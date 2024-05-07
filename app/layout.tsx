@@ -4,6 +4,7 @@ import { GlobalStyle } from '@/lib/style/globalStyles'
 import RecoilRootWrapper from '@/lib/recoil/recoilWrapper'
 import React from 'react'
 import ThemeWrapper from '@/lib/style/theme/themeWrapper'
+import { LocalFonts } from '@/lib/style/localFonts'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +21,7 @@ export default function RootLayout({
       <GlobalStyle />
       <ThemeWrapper>
         <html lang="ko">
-          <body>
+          <body className={LocalFonts.SUITv1.className}>
             <RecoilRootWrapper>{children}</RecoilRootWrapper>
           </body>
         </html>

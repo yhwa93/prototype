@@ -42,6 +42,12 @@ export const Container = styled.div`
   width: 100%;
   box-sizing: border-box;
 
+  & > h1 {
+    font-size: 150px;
+    color: white;
+    font-weight: 300;
+  }
+
   ${(props) => props.theme.MediaQueries.sm`
     width: ${props.theme.Containers.sm}px;
   `}
