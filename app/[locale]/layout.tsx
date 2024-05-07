@@ -8,6 +8,7 @@ import { LocalFonts } from '@/lib/style/localFonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import Header from '@/lib/components/header'
+import { LOCALES } from '@/lib/types/Enums'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,7 +30,7 @@ export default async function RootLayout({
       <ThemeWrapper>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <html lang={locale}>
-            <body className={locale === 'ja' ? LocalFonts.NotoSansJP.className : LocalFonts.SUITv1.className}>
+            <body className={locale === LOCALES.JA ? LocalFonts.NotoSansJP.className : LocalFonts.SUITv1.className}>
               <RecoilRootWrapper>
                 <Header />
                 {children}
