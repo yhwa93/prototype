@@ -3,7 +3,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Thumbs, FreeMode, Navigation, Controller, Parallax, EffectFade, Pagination, Scrollbar } from 'swiper/modules'
 import { type Swiper as SwiperTypes } from 'swiper'
-
+import Lottie from 'react-lottie-player'
+import lottieJson from '@/lottie/lottie.json'
 import { useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/thumbs'
@@ -34,9 +35,13 @@ export default function IntroSwiper() {
           modules={[Navigation, Autoplay, Controller]}
         >
           <SwiperSlide>
-            <h2>
-              What is <br /> Your Gift? 11
-            </h2>
+            <div className="title">
+              <h2>
+                What is <br /> Your Gift? 11
+              </h2>
+              <Lottie style={{ width: 130 }} animationData={lottieJson} play={true} />
+            </div>
+
             <p>
               It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point
               of

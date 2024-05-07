@@ -222,15 +222,20 @@ export const LeftGroup = styled.div`
   .intro_title_swiper {
     width: 100%;
 
-    h2 {
-      font-size: 30px;
-      display: block;
-      margin-bottom: 18px;
-    }
+    .title {
+      display: flex;
+      align-content: center;
 
-    p {
-      font-size: 18px;
-      line-height: 24px;
+      h2 {
+        font-size: 30px;
+        display: block;
+        margin-bottom: 18px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
     }
   }
 
