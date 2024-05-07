@@ -1,6 +1,7 @@
 'use client'
 import styled from 'styled-components'
 import LocaleSwitcher from '@/lib/components/localeSwitcher'
+import { Link } from '@/navigation'
 
 const HeaderWrapper = styled.header`
   height: 80px;
@@ -24,6 +25,8 @@ export default function Header() {
     <HeaderWrapper>
       <Container>
         <LocaleSwitcher />
+        <Link href={'/faq'}>FAQ</Link>
+        <Link href={'/'}>HOME</Link>
       </Container>
     </HeaderWrapper>
   )
