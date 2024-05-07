@@ -1,5 +1,5 @@
 'use server'
-import MainPage from '@/app/(root)/components/mainpage'
+import MainPage from '@/app/[locale]/(root)/components/mainpage'
 
 export interface IDummyData {
   title: string

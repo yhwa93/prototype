@@ -19,6 +19,52 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.8.1.tgz#182b5a4704ef8ad91bde93f7a860a88fd92c79a3"
   integrity sha512-KOEGMu6dmJZtpadb476IsZBclKvILjopjUii3V+7MnXIQCYh8W3NgNcgwo21n9LXZX6EDIKvqfjYxXebDwxKmQ==
 
+"@formatjs/ecma402-abstract@1.18.2", "@formatjs/ecma402-abstract@^1.11.4":
+  version "1.18.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.18.2.tgz#bf103712a406874eb1e387858d5be2371ab3aa14"
+  integrity sha512-+QoPW4csYALsQIl8GbN14igZzDbuwzcpWrku9nyMXlaqAlwRBgl5V+p0vWMGFqHOw37czNXaP/lEk4wbLgcmtA==
+  dependencies:
+    "@formatjs/intl-localematcher" "0.5.4"
+    tslib "^2.4.0"
+
+"@formatjs/fast-memoize@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/fast-memoize/-/fast-memoize-2.2.0.tgz#33bd616d2e486c3e8ef4e68c99648c196887802b"
+  integrity sha512-hnk/nY8FyrL5YxwP9e4r9dqeM6cAbo8PeU9UjyXojZMNvVad2Z06FAVHyR3Ecw6fza+0GH7vdJgiKIVXTMbSBA==
+  dependencies:
+    tslib "^2.4.0"
+
+"@formatjs/icu-messageformat-parser@2.7.6":
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.7.6.tgz#3d69806de056d2919d53dad895a5ff4851e4e9ff"
+  integrity sha512-etVau26po9+eewJKYoiBKP6743I1br0/Ie00Pb/S/PtmYfmjTcOn2YCh2yNkSZI12h6Rg+BOgQYborXk46BvkA==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.18.2"
+    "@formatjs/icu-skeleton-parser" "1.8.0"
+    tslib "^2.4.0"
+
+"@formatjs/icu-skeleton-parser@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.8.0.tgz#5f3d3a620c687d6f8c180d80d1241e8f213acf79"
+  integrity sha512-QWLAYvM0n8hv7Nq5BEs4LKIjevpVpbGLAJgOaYzg9wABEoX1j0JO1q2/jVkO6CVlq0dbsxZCngS5aXbysYueqA==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.18.2"
+    tslib "^2.4.0"
+
+"@formatjs/intl-localematcher@0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.5.4.tgz#caa71f2e40d93e37d58be35cfffe57865f2b366f"
+  integrity sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==
+  dependencies:
+    tslib "^2.4.0"
+
+"@formatjs/intl-localematcher@^0.2.32":
+  version "0.2.32"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.2.32.tgz#00d4d307cd7d514b298e15a11a369b86c8933ec1"
+  integrity sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==
+  dependencies:
+    tslib "^2.4.0"
+
 "@next/env@14.2.3":
   version "14.2.3"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.2.3.tgz#d6def29d1c763c0afb397343a15a82e7d92353a0"
@@ -170,6 +216,16 @@ hamt_plus@1.0.2:
   resolved "https://registry.yarnpkg.com/hamt_plus/-/hamt_plus-1.0.2.tgz#e21c252968c7e33b20f6a1b094cd85787a265601"
   integrity sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==
 
+intl-messageformat@^10.5.11:
+  version "10.5.12"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.5.12.tgz#a0c1a20da896b7a1f4ba1b59c8ba5d9943c29c3f"
+  integrity sha512-izl0uxhy/melhw8gP2r8pGiVieviZmM4v5Oqx3c1/R7g9cwER2smmGfSjcIsp8Y3Q53bfciL/gkxacJRx/dUvg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.18.2"
+    "@formatjs/fast-memoize" "2.2.0"
+    "@formatjs/icu-messageformat-parser" "2.7.6"
+    tslib "^2.4.0"
+
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -186,6 +242,20 @@ nanoid@^3.3.6:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
+
+negotiator@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
+  integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
+
+next-intl@^3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.12.2.tgz#f58332c7735f1445bfc2dfb34bb746aac707c913"
+  integrity sha512-KsbvKs00VcL1EIMIaRln129lR7xdpB0Lng1+8HR1MYywtRo+r4Pi7HVUZJnnO364jsZeptekYejJd0NBo3W8Fw==
+  dependencies:
+    "@formatjs/intl-localematcher" "^0.2.32"
+    negotiator "^0.6.3"
+    use-intl "^3.12.2"
 
 next@14.2.3:
   version "14.2.3"
@@ -334,3 +404,11 @@ undici-types@~5.26.4:
   version "5.26.5"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
   integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
+
+use-intl@^3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.12.2.tgz#4f0358008f980c19ef51ded821c4b4fa979b0c05"
+  integrity sha512-pX+FQVNLoorie/AV9Y4EgeeNZG8ZLJIQu1wQALTvKo3TCQhlYikO+9xbQpgFf0bjXawQ+JUdcu0BWAhq06eMYg==
+  dependencies:
+    "@formatjs/ecma402-abstract" "^1.11.4"
+    intl-messageformat "^10.5.11"

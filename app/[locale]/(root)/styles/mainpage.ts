@@ -43,7 +43,7 @@ export const Container = styled.div`
   box-sizing: border-box;
 
   & > h1 {
-    font-size: 150px;
+    font-size: 50px;
     color: white;
     font-weight: 300;
   }

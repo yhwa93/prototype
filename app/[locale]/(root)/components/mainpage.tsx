@@ -1,5 +1,5 @@
 'use client'
-import * as S from '@/app/(root)/styles/mainpage'
+import * as S from '@/app/[locale]/(root)/styles/mainpage'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
@@ -12,11 +12,14 @@ import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { dummyListState } from '@/lib/recoil/atoms'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { IDummyData } from '@/app/(root)/page'
+import { IDummyData } from '@/app/[locale]/(root)/page'
+import { useTranslations } from 'next-intl'
 
 export default function MainPage({ data }: { data: IDummyData[] }) {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [dummyData, setDummyData] = useRecoilState(dummyListState)
+
+  const t = useTranslations('Index')
 
   useEffect(() => {
     setDummyData(() => data)
@@ -25,7 +28,7 @@ export default function MainPage({ data }: { data: IDummyData[] }) {
   return (
     <S.MainPageWrapper>
       <S.Container>
-        <h1>test</h1>
+        <h1>{t('title')}</h1>
         {/*<S.IntroSection>*/}
         {/*  <S.DescriptionGroup>*/}
         {/*    <S.TitleAreaList>*/}
