@@ -1,21 +1,14 @@
-//미디어 쿼리 자체를 export하는 파일
-import { css, CSSProp } from 'styled-components'
-import { IWindows } from '@/lib/style/styled'
+//미디어 쿼리를 모듈화 export
+import { css } from 'styled-components'
+import { MediaQueryType, WindowsType } from '@/lib/style/styled'
+import { WINDOW_SIZES } from '@/lib/style/styleEnums'
 
-enum WINDOWS {
-  XXXS = 'xxxs',
-  XXS = 'xxs',
-  XS = 'xs',
-  SM = 'sm',
-  MD = 'md',
-  LG = 'lg',
-  XL = 'xl',
-}
-
-type WindowType = WINDOWS.XXXS | WINDOWS.XXS | WINDOWS.XS | WINDOWS.SM | WINDOWS.MD | WINDOWS.LG | WINDOWS.XL
-type MediaQueriesType = Record<WindowType, (literals: TemplateStringsArray, ...placeholders: any[]) => CSSProp>
-
-const Windows: IWindows = {
+/* 해상도별 사이즈 object
+ * - xxxs, xxs, xs, sm : 모바일/모바일 가로 (280,375,460)
+ * - md : 태블릿 (640,768)
+ * - lg, xl : 데스크탑/노트북 (1024,1280)
+ * */
+const windowSizesObj: Record<WindowsType, number> = {
   xxxs: 280,
   xxs: 375,
   xs: 460,
@@ -25,63 +18,65 @@ const Windows: IWindows = {
   xl: 1280,
 }
 
-//나열
-const MediaQueries: MediaQueriesType = Object.keys(Windows).reduce((acc, label) => {
-  switch (label) {
-    case WINDOWS.XXXS:
-      acc.xxxs = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media (min-width: ${Windows.xxxs}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.XXS:
-      acc.xxs = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.xxs}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.XS:
-      acc.xs = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.xs}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.SM:
-      acc.sm = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.sm}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.MD:
-      acc.md = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.md}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.LG:
-      acc.lg = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.lg}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-    case WINDOWS.XL:
-      acc.xl = (literals: TemplateStringsArray, ...placeholders: any[]) => css`
-        @media screen and (min-width: ${Windows.xl}px) {
-          ${css(literals, ...placeholders)};
-        }
-      `
-      break
-  }
-  return acc
-}, {} as MediaQueriesType)
+//해상도별 미디어쿼리 모듈화
+const MediaQueries: Record<WindowsType, MediaQueryType> = Object.keys(windowSizesObj).reduce(
+  (acc, label) => {
+    switch (label) {
+      case WINDOW_SIZES.XXXS:
+        acc.xxxs = (literals, ...backQuoteArgs) => css`
+          @media (min-width: ${windowSizesObj.xxxs}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.XXS:
+        acc.xxs = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.xxs}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.XS:
+        acc.xs = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.xs}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.SM:
+        acc.sm = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.sm}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.MD:
+        acc.md = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.md}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.LG:
+        acc.lg = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.lg}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+      case WINDOW_SIZES.XL:
+        acc.xl = (literals, ...backQuoteArgs) => css`
+          @media screen and (min-width: ${windowSizesObj.xl}px) {
+            ${css(literals, ...backQuoteArgs)};
+          }
+        `
+        break
+    }
+    return acc
+  },
+  {} as Record<WindowsType, MediaQueryType>,
+)
 
-//종합
 export const media = {
   MediaQueries,
 }

@@ -1,18 +1,13 @@
 //styled.d.ts
 import 'styled-components'
 import { CSSProp } from 'styled-components'
-import { Windows } from '@/lib/style/media'
+import { WINDOW_SIZES } from '@/lib/style/styleEnums'
 
-interface IWindows {
-  xxxs: number
-  xxs: number
-  xs: number
-  sm: number
-  md: number
-  lg: number
-  xl: number
-}
+/* MediaQueries */
+type WindowsType = WINDOW_SIZES.XXXS | WINDOW_SIZES.XXS | WINDOW_SIZES.XS | WINDOW_SIZES.SM | WINDOW_SIZES.MD | WINDOW_SIZES.LG | WINDOW_SIZES.XL
+type MediaQueryType = (literals: TemplateStringsArray, ...backQuoteArgs: any[]) => CSSProp
 
+/* Containers */
 interface IContainers {
   sm: number
   md: number
@@ -20,19 +15,9 @@ interface IContainers {
   xl: number
 }
 
-interface IMediaQueries {
-  xxxs: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  xxs: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  xs: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  sm: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  md: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  lg: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-  xl: (l: TemplateStringsArray, ...p: any[]) => CSSProp
-}
-
 declare module 'styled-components' {
   export interface DefaultTheme {
-    MediaQueries: IMediaQueries
+    MediaQueries: Record<WindowsType, MediaQueryType>
     Containers: IContainers
   }
 }
