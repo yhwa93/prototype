@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { media } from '@/lib/style/media'
+import { media } from '@/lib/style/theme/media'
 import { theme } from '@/lib/style/theme/theme'
 
 interface IRecoilRootWrapper {

@@ -1,4 +1,4 @@
-//미디어 쿼리를 모듈화 export
+//미디어 쿼리 모듈화 theme export
 import { css } from 'styled-components'
 import { MediaQueryType, WindowsType } from '@/lib/style/styled'
 import { WINDOW_SIZES } from '@/lib/style/styleEnums'

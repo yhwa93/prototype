@@ -1,6 +1,4 @@
-//통일화를 위해 정의된 다른 theme 속성 (일반적인 ThemeProvider의 theme props 값)
-
-//나열
+//공통화 (컬러, 폰트, 공통 스타일 테마) theme export
 import { IContainers } from '@/lib/style/styled'
 
 const Containers: IContainers = {
@@ -10,7 +8,6 @@ const Containers: IContainers = {
   xl: 1184,
 }
 
-//종합
 export const theme = {
   Containers,
 }
