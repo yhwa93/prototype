@@ -1,22 +1,30 @@
 'use client'
 import { useForm } from 'react-hook-form'
-import { createUser } from '@/app/[locale]/(root)/actions'
+import { createUser, deleteUser } from '@/app/[locale]/(root)/actions'
 
 export default function TestForm(props: any) {
   const { register, handleSubmit } = useForm()
 
   const onSubmit = async (value: any) => {
     await createUser(value.username)
+  }
 
-    console.log(value.username)
+  const onDeleteUserName = async (username: string, id: number) => {
+    await deleteUser(username, id)
   }
 
   return (
     <div>
       <h1>UserName List</h1>
       <ul>
-        {props.userNames.map((item: any, idx: number) => (
-          <li key={item.username}>{item.username}</li>
+        {props.userNames.map((item: any) => (
+          <li key={item.id}>
+            <span>{item.username}</span>
+            <span>
+              <em>✏️</em>
+              <em onClick={() => onDeleteUserName(item.username, item.id)}>❌</em>
+            </span>
+          </li>
         ))}
       </ul>
 
