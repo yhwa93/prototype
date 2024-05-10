@@ -16,15 +16,11 @@ import { IDummyData } from '@/app/[locale]/(root)/page'
 import { useTranslations } from 'next-intl'
 import IntroSwiper from '@/app/[locale]/(root)/components/introSwiper'
 
-export default function MainPage({ data }: { data: IDummyData[] }) {
+export default function MainPage() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [dummyData, setDummyData] = useRecoilState(dummyListState)
 
   const t = useTranslations('Index')
-
-  useEffect(() => {
-    setDummyData(() => data)
-  }, [setDummyData])
 
   return (
     <S.MainPageWrapper>
