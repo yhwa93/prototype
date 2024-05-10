@@ -1,5 +1,6 @@
 'use server'
 import db from '../../../lib/db'
+import { prefix } from 'stylis'
 
 export async function createUser(formData: any) {
   console.log('Create This User ========>', formData)
@@ -18,6 +19,20 @@ export async function deleteUser(username: string, id: number) {
     where: {
       id,
       username,
+    },
+  })
+}
+
+export async function updateUser(prevData: any, updateData: any) {
+  console.log('Update This User ========>', prevData, updateData)
+
+  await db.users.update({
+    where: {
+      id: prevData.id,
+      username: prevData.username,
+    },
+    data: {
+      username: updateData,
     },
   })
 }
